@@ -38,7 +38,7 @@ class App extends React.Component {
   }
 
   handleClick(i) {
-    const history = this.state.history.slice(0);
+    const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
@@ -53,7 +53,7 @@ class App extends React.Component {
       ]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext
-    })
+    });
   }
 
   jumpTo(step) {
@@ -71,10 +71,10 @@ class App extends React.Component {
       const desc = move ? "Go to move # " + move : "Restart Game";
       return (
         <li key={move} className="moves-class">
-          <button></button>
+          <button onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
-      )
-    })
+      );
+    });
 
     let status;
     if (winner) {
