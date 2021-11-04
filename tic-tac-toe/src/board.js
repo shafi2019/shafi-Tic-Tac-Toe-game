@@ -12,7 +12,6 @@ class Board extends React.Component {
         )
     }
 
-
     render() {
         return (
             <div>
@@ -33,7 +32,7 @@ class Board extends React.Component {
                 </div>
 
             </div>
-        )
+        );
     }
 }
 
