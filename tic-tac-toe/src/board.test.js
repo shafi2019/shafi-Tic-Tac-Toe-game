@@ -7,7 +7,7 @@ it('renders without crashing', () => {
     shallow(<Board squares={squares} />);
 })
 
-it('calls onClick event on click of board square', () => {
+it('calls onClick event on click of a board square', () => {
     let squares = Array(9).fill(null)
     const onClick = jest.fn();
     let wrapper = mount(<Board squares={squares} onClick={onClick} />)
